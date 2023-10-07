@@ -1,0 +1,44 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0;
+}
+
+.clock {
+    margin: 100px auto;
+    background-color: #333;
+    color: #fff;
+    max-width: 500px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+.time {
+    font-size: 3rem;
+    margin-bottom: 10px;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
+
+.date {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+}
+
+#format-switch {
+    background-color: #4caf50; /* Green background color */
+    color: white; /* White text color */
+    border: none; /* Remove border */
+    padding: 10px 20px; /* Add some padding */
+    cursor: pointer; /* Add a pointer cursor on hover */
+    border-radius: 5px; /* Add rounded corners */
+    font-size: 16px; /* Increase font size */
+    margin-top: 20px;
+}
+
+#format-switch:hover {
+    background-color: #45a049; /* Darker green on hover */
+}
