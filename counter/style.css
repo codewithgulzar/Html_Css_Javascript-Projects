@@ -1,7 +1,20 @@
+:root {
+    --light-gray: #f0f0f0;
+    --dark-gray: #333;
+    --white: #fff;
+    --green: #3a833a;
+    --light-green: #4c9d4c;
+    --red: #d4403a;
+    --dark-red: #c13732;
+    --grey: grey;
+    --gray: #999;
+}
+
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    background-color: #f0f0f0;
+    /* background-color: var(--light-gray); */
+    background-color: var(--light-gray);
 }
 
 .container {
@@ -11,11 +24,11 @@ body {
 
 h2 {
     font-size: 2.5rem;
-    color: #333;
+    color: var(--dark-gray);
 }
 
 .counter {
-    background-color: #fff;
+    background-color: var(--white);
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -36,34 +49,51 @@ button {
 }
 
 #increment {
-    background-color: #3a833a;
+    background-color: var(--green);
     color: white;
     transition: background-color 0.3s, transform 0.2s;
 }
 
 #increment:hover {
-    background-color: #4c9d4c;
+    background-color: var(--light-green);
     transform: scale(1.1);
 }
 
 #decrement {
-    background-color: #d4403a;
+    background-color: var(--red);
     color: white;
     transition: background-color 0.3s, transform 0.2s;
 }
 
 #decrement:hover {
-    background-color: #c13732;
+    background-color: var(--dark-red);
     transform: scale(1.1);
 }
 
 #reset {
-    background-color: grey;
+    background-color: var(--grey);
     color: white;
     transition: background-color 0.3s, transform 0.2s;
 }
 
 #reset:hover {
-    background-color: #999;
+    background-color: var(--gray);
     transform: scale(1.1);
+}
+
+@media (max-width: 600px) {
+    .btns {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+    }
+
+    #count {
+        margin-bottom: 20px;
+    }
+
+    button {
+        margin: 5px 0;
+        width: 50%; /* Make all buttons equal width on small screens */
+    }
 }
