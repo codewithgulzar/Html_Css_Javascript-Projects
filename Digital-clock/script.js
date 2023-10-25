@@ -11,7 +11,7 @@ formatSwitchButton.addEventListener("click", toggleTimeFormat);
 
 function updateTime() {
     const now = new Date();
-    console.log(now);
+    // console.log(now);
 
     // Get elements
     const timeElement = document.getElementById("time");

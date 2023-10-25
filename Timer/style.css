@@ -1,0 +1,53 @@
+.timer-container,
+.stopwatch-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.timer,
+.stopwatch {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#minutes-input,
+#seconds-input {
+    width: 50px;
+    text-align: center;
+    margin: 0 5px;
+}
+
+#start-button,
+#start-stop-button,
+#reset-button,
+#lap-button {
+    padding: 10px 20px;
+    background-color: #0074d9;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin: 5px;
+}
+
+#start-button:hover,
+#start-stop-button:hover,
+#reset-button:hover,
+#lap-button:hover {
+    background-color: #0056b3;
+}
+
+.time-display {
+    font-size: 2em;
+    margin: 20px 0;
+}
+
+#lap-times-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+#lap-times-list li {
+    margin: 5px 0;
+    font-size: 1.2em;
+}

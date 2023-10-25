@@ -13,7 +13,6 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    /* background-color: var(--light-gray); */
     background-color: var(--light-gray);
 }
 
@@ -86,6 +85,7 @@ button {
         display: flex;
         flex-direction: column-reverse;
         align-items: center;
+        transition: all 1s;
     }
 
     #count {

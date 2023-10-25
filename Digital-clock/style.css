@@ -1,15 +1,23 @@
+:root {
+    --light-gray: #f0f0f0;
+    --gray: #333;
+    --white: #fff;
+    --green: #4caf50;
+    --dark-green: #45a049;
+}
+
 body {
     font-family: Arial, Helvetica, sans-serif;
     text-align: center;
-    background-color: #f0f0f0;
+    background-color: var(--light-gray);
     margin: 0;
     padding: 0;
 }
 
 .clock {
     margin: 100px auto;
-    background-color: #333;
-    color: #fff;
+    background-color: var(--gray);
+    color: var(--white);
     max-width: 500px;
     padding: 20px;
     border-radius: 10px;
@@ -29,16 +37,16 @@ body {
 }
 
 #format-switch {
-    background-color: #4caf50; /* Green background color */
-    color: white; /* White text color */
-    border: none; /* Remove border */
-    padding: 10px 20px; /* Add some padding */
-    cursor: pointer; /* Add a pointer cursor on hover */
-    border-radius: 5px; /* Add rounded corners */
-    font-size: 16px; /* Increase font size */
+    background-color: var(--green);
+    color: var(--white);
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
     margin-top: 20px;
 }
 
 #format-switch:hover {
-    background-color: #45a049; /* Darker green on hover */
+    background-color: var(--dark-green);
 }
