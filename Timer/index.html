@@ -1,29 +1,51 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <link rel="stylesheet" type="text/css" href="style.css" />
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <link rel="stylesheet" href="style.css" />
     </head>
     <body>
-        <div class="timer-container">
-            <h1>Timer Mode</h1>
-            <div class="timer">
-                <input type="number" id="minutes-input" placeholder="Minutes" />
-                <input type="number" id="seconds-input" placeholder="Seconds" />
-                <button id="start-button">Start</button>
-                <button id="reset-button">Reset</button>
+        <audio id="timerEndSound" src="timer-end-sound.mp3"></audio>
+        <div class="container">
+            <div class="time-input">
+                <div class="hours">
+                    <h3>Hours</h3>
+                    <input
+                        type="number"
+                        id="hr"
+                        min="0"
+                        max="99"
+                        placeholder="00"
+                    />
+                </div>
+                <div class="minutes">
+                    <h3>Minutes</h3>
+                    <input
+                        type="number"
+                        id="min"
+                        min="0"
+                        max="59"
+                        placeholder="00"
+                    />
+                </div>
+                <div class="seconds">
+                    <h3>Seconds</h3>
+                    <input
+                        type="number"
+                        id="sec"
+                        min="0"
+                        max="59"
+                        placeholder="00"
+                    />
+                </div>
             </div>
-            <div class="time-display" id="time-display">00:00</div>
-        </div>
-
-        <div class="stopwatch-container">
-            <h1>Stopwatch Mode</h1>
-            <div class="stopwatch">
-                <button id="start-stop-button">Start</button>
-                <button id="reset-button">Reset</button>
-                <div class="time-display" id="time-display">00:00</div>
+            <div class="timer timer-hidden"></div>
+            <div class="btns">
+                <button class="done">Done</button>
+                <button class="start">Start</button>
             </div>
-            <button id="lap-button">Lap</button>
-            <ul id="lap-times-list"></ul>
         </div>
 
         <script src="script.js"></script>

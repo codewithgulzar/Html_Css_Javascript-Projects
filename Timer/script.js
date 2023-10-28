@@ -1,105 +1,141 @@
+// document.addEventListener("DOMContentLoaded", function () {
+//     const timeInput = document.querySelector(".time-input");
+//     const timerDisplay = document.querySelector(".timer");
+//     const startButton = document.querySelector(".start");
+//     const doneButton = document.querySelector(".done");
+//     const hrInput = document.querySelector("#hr");
+//     const minInput = document.querySelector("#min");
+//     const secInput = document.querySelector("#sec");
+//     const timerEndSound = document.getElementById("timerEndSound"); // Reference to the audio element
+
+//     let countdownInterval;
+//     let totalTime = 0;
+//     let isRunning = false;
+//     // timerEndSound.volume = 0.5;
+
+//     startButton.addEventListener("click", function () {
+//         if (!isRunning) {
+//             const hours = parseInt(hrInput.value) || 0;
+//             const minutes = parseInt(minInput.value) || 0;
+//             const seconds = parseInt(secInput.value) || 0;
+//             if (totalTime === 0) {
+//                 totalTime = hours * 3600 + minutes * 60 + seconds;
+//             }
+//             startButton.textContent = "Pause";
+//             timeInput.classList.add("hidden");
+//             timerDisplay.classList.remove("timer-hidden");
+//             countdownInterval = setInterval(updateTimer, 1000);
+//             isRunning = true;
+//         } else {
+//             clearInterval(countdownInterval);
+//             startButton.textContent = "Resume";
+//             isRunning = false;
+//         }
+//     });
+
+//     doneButton.addEventListener("click", function () {
+//         clearInterval(countdownInterval);
+//         isRunning = false;
+//         totalTime = 0;
+//         timeInput.classList.remove("hidden");
+//         timerDisplay.classList.add("timer-hidden");
+//         startButton.textContent = "Start";
+//     });
+
+//     function updateTimer() {
+//         if (totalTime <= 0) {
+//             doneButton.click();
+//             playTimerEndSound(); // Play the timer end sound
+//             return;
+//         }
+
+//         const hours = Math.floor(totalTime / 3600);
+//         const minutes = Math.floor((totalTime % 3600) / 60);
+//         const seconds = totalTime % 60;
+
+//         timerDisplay.textContent = `${String(hours).padStart(2, "0")}:${String(
+//             minutes
+//         ).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
+//         totalTime--;
+//     }
+
+//     function playTimerEndSound() {
+//         if (timerEndSound) {
+//             timerEndSound.play(); // Play the sound
+//         }
+//     }
+// });
+
 document.addEventListener("DOMContentLoaded", function () {
-    // Timer Mode
-    const timerMinutesInput = document.getElementById("timer-minutes-input");
-    const timerSecondsInput = document.getElementById("timer-seconds-input");
-    const startTimerButton = document.getElementById("start-timer-button");
-    const resetTimerButton = document.getElementById("reset-timer-button");
-    const timerDisplay = document.getElementById("timer-display");
-    let timerCountdownInterval;
-    let timerRunning = false;
+    const timeInput = document.querySelector(".time-input");
+    const timerDisplay = document.querySelector(".timer");
+    const startButton = document.querySelector(".start");
+    const doneButton = document.querySelector(".done");
+    const hrInput = document.querySelector("#hr");
+    const minInput = document.querySelector("#min");
+    const secInput = document.querySelector("#sec");
+    const timerEndSound = document.getElementById("timerEndSound"); // Reference to the audio element
 
-    startTimerButton.addEventListener("click", function () {
-        if (timerRunning) {
-            clearInterval(timerCountdownInterval);
-            startTimerButton.textContent = "Start";
-            timerRunning = false;
-        } else {
-            const timerMinutes = parseInt(timerMinutesInput.value) || 0;
-            const timerSeconds = parseInt(timerSecondsInput.value) || 0;
-            let totalSeconds = timerMinutes * 60 + timerSeconds;
+    let countdownInterval;
+    let totalTime = 0;
+    let isRunning = false;
 
-            if (totalSeconds > 0) {
-                startTimerButton.textContent = "Pause";
-                timerRunning = true;
-
-                timerCountdownInterval = setInterval(function () {
-                    if (totalSeconds <= 0) {
-                        clearInterval(timerCountdownInterval);
-                        timerDisplay.textContent = "00:00";
-                        // Add code to trigger sound notification or action here when the timer reaches zero.
-                    } else {
-                        const displayMinutes = Math.floor(totalSeconds / 60);
-                        const displaySeconds = totalSeconds % 60;
-                        timerDisplay.textContent = `${displayMinutes
-                            .toString()
-                            .padStart(2, "0")}:${displaySeconds
-                            .toString()
-                            .padStart(2, "0")}`;
-                        totalSeconds--;
-                    }
-                }, 1000);
+    startButton.addEventListener("click", function () {
+        if (!isRunning) {
+            const hours = parseInt(hrInput.value) || 0;
+            const minutes = parseInt(minInput.value) || 0;
+            const seconds = parseInt(secInput.value) || 0;
+            if (totalTime === 0) {
+                totalTime = hours * 3600 + minutes * 60 + seconds;
             }
-        }
-    });
-
-    resetTimerButton.addEventListener("click", function () {
-        clearInterval(timerCountdownInterval);
-        timerDisplay.textContent = "00:00";
-        startTimerButton.textContent = "Start";
-        timerRunning = false;
-        timerMinutesInput.value = "";
-        timerSecondsInput.value = "";
-    });
-
-    // Stopwatch Mode
-    const startStopButton = document.getElementById("start-stop-button");
-    const resetStopwatchButton = document.getElementById(
-        "reset-stopwatch-button"
-    );
-    const stopwatchDisplay = document.getElementById("stopwatch-display");
-    const lapButton = document.getElementById("lap-button");
-    const lapTimesList = document.getElementById("lap-times-list");
-    let stopwatchInterval;
-    let stopwatchRunning = false;
-    let elapsedSeconds = 0;
-
-    startStopButton.addEventListener("click", function () {
-        if (stopwatchRunning) {
-            clearInterval(stopwatchInterval);
-            startStopButton.textContent = "Start";
-            stopwatchRunning = false;
+            startButton.textContent = "Pause";
+            timeInput.classList.add("hidden");
+            timerDisplay.classList.remove("timer-hidden");
+            countdownInterval = setInterval(updateTimer, 1000);
+            isRunning = true;
         } else {
-            startStopButton.textContent = "Stop";
-            stopwatchRunning = true;
-
-            stopwatchInterval = setInterval(function () {
-                elapsedSeconds++;
-                const displayMinutes = Math.floor(elapsedSeconds / 60);
-                const displaySeconds = elapsedSeconds % 60;
-                stopwatchDisplay.textContent = `${displayMinutes
-                    .toString()
-                    .padStart(2, "0")}:${displaySeconds
-                    .toString()
-                    .padStart(2, "0")}`;
-            }, 1000);
+            clearInterval(countdownInterval);
+            startButton.textContent = "Resume";
+            isRunning = false;
         }
     });
 
-    resetStopwatchButton.addEventListener("click", function () {
-        clearInterval(stopwatchInterval);
-        stopwatchDisplay.textContent = "00:00";
-        startStopButton.textContent = "Start";
-        stopwatchRunning = false;
-        elapsedSeconds = 0;
-        lapTimesList.innerHTML = "";
+    doneButton.addEventListener("click", function () {
+        clearInterval(countdownInterval);
+        isRunning = false;
+        totalTime = 0;
+        timeInput.classList.remove("hidden");
+        timerDisplay.classList.add("timer-hidden");
+        startButton.textContent = "Start";
     });
 
-    lapButton.addEventListener("click", function () {
-        if (stopwatchRunning) {
-            const lapTime = stopwatchDisplay.textContent;
-            const lapItem = document.createElement("li");
-            lapItem.textContent = lapTime;
-            lapTimesList.appendChild(lapItem);
+    function updateTimer() {
+        if (totalTime <= 0) {
+            doneButton.click();
+            playTimerEndSound(); // Play the timer end sound
+            setTimeout(stopTimerEndSound, 6000); // Stop the sound after 6 seconds
+            return;
         }
-    });
+
+        const hours = Math.floor(totalTime / 3600);
+        const minutes = Math.floor((totalTime % 3600) / 60);
+        const seconds = totalTime % 60;
+
+        timerDisplay.textContent = `${String(hours).padStart(2, "0")}:${String(
+            minutes
+        ).padStart(2, "0")}:${String(seconds).padStart(2, "0")}`;
+        totalTime--;
+    }
+
+    function playTimerEndSound() {
+        if (timerEndSound) {
+            timerEndSound.play(); // Play the sound
+        }
+    }
+
+    function stopTimerEndSound() {
+        if (timerEndSound) {
+            timerEndSound.pause(); // Stop the sound
+        }
+    }
 });
