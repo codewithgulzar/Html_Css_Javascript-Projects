@@ -1,32 +1,36 @@
-:root {
-    --light-gray: #f0f0f0;
-    --gray: #333;
-    --white: #fff;
-    --green: #4caf50;
-    --dark-green: #45a049;
-}
-
 body {
     font-family: Arial, Helvetica, sans-serif;
-    text-align: center;
-    background-color: var(--light-gray);
-    margin: 0;
-    padding: 0;
+    background-color: #f0f0f0;
+    margin: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
 }
 
 .clock {
-    margin: 100px auto;
-    background-color: var(--gray);
-    color: var(--white);
-    max-width: 500px;
-    padding: 20px;
+    width: 450px;
+    min-height: 150px;
+    padding: 50px;
+    background-color: #333;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    flex-direction: column;
+    gap: 20px;
+}
+
+.btns {
+    margin: 15px;
+    display: flex;
+    gap: 20px;
 }
 
 .time {
     font-size: 3rem;
-    margin-bottom: 10px;
     letter-spacing: 3px;
     font-weight: bold;
 }
@@ -36,17 +40,36 @@ body {
     letter-spacing: 1px;
 }
 
-#format-switch {
-    background-color: var(--green);
-    color: var(--white);
+#switch-format {
+    background-color: #4caf50;
     border: none;
-    padding: 10px 20px;
+    padding: 8px 20px;
     cursor: pointer;
     border-radius: 5px;
-    font-size: 16px;
     margin-top: 20px;
+    color: white;
+    font-size: 1.2rem;
 }
 
-#format-switch:hover {
-    background-color: var(--dark-green);
+#switch-format:hover {
+    background-color: #45a049;
+}
+
+@media (max-width: 600px) {
+    .clock {
+        width: 300px;
+    }
+    .time {
+        font-size: 2rem;
+        letter-spacing: 1px;
+        font-weight: bold;
+    }
+
+    .date {
+        font-size: 1rem;
+        letter-spacing: 1px;
+    }
+    #switch-format {
+        font-size: 1rem;
+    }
 }

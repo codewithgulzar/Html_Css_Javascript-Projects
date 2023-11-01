@@ -2,10 +2,11 @@ let isTwelveHourFormat = true;
 
 function toggleTimeFormat() {
     isTwelveHourFormat = !isTwelveHourFormat;
+    // if it is true, then it will be false. If it is false, then it will be true.
     updateTime();
 }
 
-const formatSwitchButton = document.getElementById("format-switch");
+const formatSwitchButton = document.getElementById("switch-format");
 
 formatSwitchButton.addEventListener("click", toggleTimeFormat);
 
@@ -17,6 +18,7 @@ function updateTime() {
     const timeElement = document.getElementById("time");
     const dateElement = document.getElementById("date");
 
+    // const hours = now.getHours();
     const hours = now.getHours();
     const minutes = String(now.getMinutes()).padStart(2, "0");
     const seconds = String(now.getSeconds()).padStart(2, "0");
@@ -25,13 +27,15 @@ function updateTime() {
 
     if (isTwelveHourFormat) {
         const period = hours >= 12 ? "PM" : "AM";
-        formattedHours = (hours % 12 || 12).toString(); // Use formattedHours instead of reassigning hours
+        formattedHours = (hours % 12 || 12).toString().padStart(2, "0"); // Use formattedHours instead of reassigning hours
         const formattedTime = `${formattedHours}:${minutes}:${seconds} ${period}`;
         timeElement.textContent = formattedTime;
+        formatSwitchButton.textContent = "Switch to 24 Hours Format";
     } else {
-        formattedHours = hours.toString(); // Use formattedHours instead of reassigning hours
+        formattedHours = hours.toString().padStart(2, "0"); // Use formattedHours instead of reassigning hours
         const formattedTime = `${formattedHours}:${minutes}:${seconds}`;
         timeElement.textContent = formattedTime;
+        formatSwitchButton.textContent = "Switch to 12 Hours Format";
     }
 
     //display date

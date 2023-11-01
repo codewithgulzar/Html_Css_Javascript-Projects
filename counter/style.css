@@ -1,99 +1,105 @@
-:root {
-    --light-gray: #f0f0f0;
-    --dark-gray: #333;
-    --white: #fff;
-    --green: #3a833a;
-    --light-green: #4c9d4c;
-    --red: #d4403a;
-    --dark-red: #c13732;
-    --grey: grey;
-    --gray: #999;
+* {
+    margin: 0;
+    padding: 0;
+    /* to remove default margin and padding of body */
 }
 
 body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #f0f0f0;
     font-family: Arial, sans-serif;
-    text-align: center;
-    background-color: var(--light-gray);
 }
 
 .container {
-    margin: 100px auto;
-    max-width: 600px;
+    width: 500px;
+    height: 500px;
+    /* background-color: red; */
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+    /* transition: all 0.5s; */
 }
 
-h2 {
+h1 {
     font-size: 2.5rem;
-    color: var(--dark-gray);
+    color: #333;
 }
 
 .counter {
-    background-color: var(--white);
+    background-color: white;
+    width: 100%;
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 2rem;
 }
 
-#count {
+#value {
     font-size: 7rem;
-    margin-bottom: 20px;
 }
 
+.btns {
+    display: flex;
+    gap: 15px;
+}
 button {
     font-size: 1.5rem;
     padding: 10px 20px;
-    border: none;
     border-radius: 4px;
+    border: none;
     cursor: pointer;
-    margin: 10px;
 }
 
 #increment {
-    background-color: var(--green);
+    background-color: #3a833a;
     color: white;
     transition: background-color 0.3s, transform 0.2s;
 }
 
 #increment:hover {
-    background-color: var(--light-green);
-    transform: scale(1.1);
-}
-
-#decrement {
-    background-color: var(--red);
-    color: white;
-    transition: background-color 0.3s, transform 0.2s;
-}
-
-#decrement:hover {
-    background-color: var(--dark-red);
+    background-color: #4c9d4c;
     transform: scale(1.1);
 }
 
 #reset {
-    background-color: var(--grey);
+    background-color: grey;
     color: white;
     transition: background-color 0.3s, transform 0.2s;
 }
 
 #reset:hover {
-    background-color: var(--gray);
+    background-color: #999;
+    transform: scale(1.1);
+}
+
+#decrement {
+    background-color: #d4403a;
+    color: white;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+#decrement:hover {
+    background-color: #c13732;
     transform: scale(1.1);
 }
 
 @media (max-width: 600px) {
     .btns {
-        display: flex;
         flex-direction: column-reverse;
-        align-items: center;
         transition: all 1s;
     }
 
-    #count {
-        margin-bottom: 20px;
-    }
-
-    button {
-        margin: 5px 0;
-        width: 50%; /* Make all buttons equal width on small screens */
+    .container {
+        width: 300px;
     }
 }
