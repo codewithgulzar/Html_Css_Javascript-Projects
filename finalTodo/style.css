@@ -1,0 +1,86 @@
+body {
+    background-color: #20235d;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100vh;
+}
+
+.todo-app {
+    max-width: 600px;
+    background-color: #fff;
+    padding: 30px 30px;
+    margin: 120px auto 15px;
+    border-radius: 15px;
+}
+
+.todo-app h1 {
+    text-align: center;
+}
+
+form {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+input[type="text"] {
+    width: 90%;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 15px;
+    border: none;
+    background: #edeef0;
+    outline: none;
+    font-size: 1rem;
+}
+
+.btn {
+    background-color: #4caf50;
+    border: none;
+    color: white;
+    padding: 15px 50px;
+    cursor: pointer;
+    border-radius: 15px;
+    font-size: 1rem;
+    position: absolute;
+    right: 16px;
+}
+
+.btn:hover {
+    background-color: #45a049;
+}
+
+ul li {
+    list-style-type: none;
+    font-size: 1.1rem;
+    padding: 10px 6px 10px 30px;
+    cursor: pointer;
+    position: relative;
+}
+
+ul li::before {
+    content: "☐";
+    font-size: 25px;
+    position: absolute;
+
+    left: 1px;
+    top: 4px;
+}
+
+ul li.checked {
+    text-decoration: line-through;
+    color: #5d5d5d;
+}
+
+ul li.checked::before {
+    content: "☑";
+    color: green;
+}
+
+.delete-task {
+    position: absolute;
+    right: 60px;
+    /* top: 10px; */
+    top: 12px;
+    color: rgb(193, 40, 40);
+}

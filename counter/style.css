@@ -34,6 +34,8 @@ h1 {
 .counter {
     background-color: white;
     width: 100%;
+    /* yeh iske parent container ka pura widht le lega
+     */
     padding: 30px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
@@ -69,7 +71,10 @@ button {
 #increment:hover {
     background-color: #4c9d4c;
     transform: scale(1.1);
+    /* means that the element will be enlarged by 10% in both the horizontal and vertical directions.
+ */
 }
+/* The CSS transform property with the scale() function is used to scale an element in two-dimensional space.  */
 
 #reset {
     background-color: grey;
