@@ -6,8 +6,9 @@ body {
 
 .todo-app {
     max-width: 600px;
-    background-color: #fff;
-    padding: 30px 30px;
+    background-color: hsl(0, 0%, 100%);
+    padding: 20px 30px;
+    padding-bottom: 50px;
     margin: 120px auto 15px;
     border-radius: 15px;
 }
@@ -19,35 +20,35 @@ body {
 form {
     display: flex;
     align-items: center;
-    justify-content: center;
     position: relative;
+    margin-bottom: 30px;
+    gap: 10px;
 }
 
 input[type="text"] {
-    width: 90%;
-    padding: 15px;
-    border: 1px solid #ccc;
+    width: 70%;
+    padding: 20px;
+    border: 4px solid #632fff;
     border-radius: 15px;
-    border: none;
-    background: #edeef0;
-    outline: none;
+    margin-left: 20px;
+
     font-size: 1rem;
 }
 
 .btn {
-    background-color: #4caf50;
+    background-color: #632fff;
     border: none;
     color: white;
-    padding: 15px 50px;
+    padding: 20px 30px;
     cursor: pointer;
     border-radius: 15px;
-    font-size: 1rem;
-    position: absolute;
-    right: 16px;
+    font-size: 1.5rem;
+    /* position: absolute; */
+    /* right: 10px; */
 }
 
 .btn:hover {
-    background-color: #45a049;
+    background-color: #4a15e9;
 }
 
 ul li {
@@ -56,6 +57,7 @@ ul li {
     padding: 10px 6px 10px 30px;
     cursor: pointer;
     position: relative;
+    /* box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2); */
 }
 
 ul li::before {
@@ -63,24 +65,29 @@ ul li::before {
     font-size: 25px;
     position: absolute;
 
-    left: 1px;
+    left: -1px;
     top: 4px;
+}
+
+#task-list {
+    padding: 0px 30px;
 }
 
 ul li.checked {
     text-decoration: line-through;
-    color: #5d5d5d;
+    color: #632fff;
 }
 
 ul li.checked::before {
     content: "☑";
-    color: green;
+    color: #632fff;
 }
 
-.delete-task {
+ul li span {
     position: absolute;
-    right: 60px;
+    right: 5px;
     /* top: 10px; */
-    top: 12px;
-    color: rgb(193, 40, 40);
+    top: 1.8px;
+    color: rgb(227, 120, 26);
+    font-size: 2rem;
 }

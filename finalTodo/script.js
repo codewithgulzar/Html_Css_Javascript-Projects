@@ -16,7 +16,7 @@ taskForm.addEventListener("submit", (e) => {
         taskListContainer.append(listItem);
 
         let span = document.createElement("span");
-        span.innerHTML = `<i class="delete-task fa-solid fa-trash"></i>`;
+        span.innerHTML = `&times;`;
         listItem.appendChild(span);
 
         //clear the input value
@@ -31,13 +31,18 @@ taskListContainer.addEventListener("click", (e) => {
         e.target.classList.toggle("checked");
         saveListData();
     }
-
-    //task deletion
-    if (e.target.classList.contains("delete-task")) {
-        const li = e.target.closest("li");
+    if (e.target.tagName === "SPAN") {
+        const li = e.target.parentElement;
         li.remove();
         saveListData();
     }
+
+    //task deletion
+    // if (e.target.classList.contains("delete-task")) {
+    //     const li = e.target.closest("li");
+    //     li.remove();
+    //     saveListData();
+    // }
 });
 
 function saveListData() {
