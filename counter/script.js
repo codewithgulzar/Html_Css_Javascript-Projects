@@ -3,31 +3,29 @@ const incrementButton = document.getElementById("increment");
 const decrementButton = document.getElementById("decrement");
 const resetButton = document.getElementById("reset");
 
-let count = 0;
+// Retrieve count from local storage on page load
+let count = localStorage.getItem("count") || 0;
 
-function updateCounter() {
-    countElement.textContent = count;
-
-    if (count > 0) {
-        countElement.style.color = "green";
-    } else if (count < 0) {
-        countElement.style.color = "red";
-    } else {
-        countElement.style.color = "black";
-    }
-}
+// Update the UI with the initial count
+countElement.textContent = count;
 
 incrementButton.addEventListener("click", () => {
     count++;
-    updateCounter();
+    updateCount();
 });
 
 decrementButton.addEventListener("click", () => {
     count--;
-    updateCounter();
+    updateCount();
 });
 
 resetButton.addEventListener("click", () => {
     count = 0;
-    updateCounter();
+    updateCount();
 });
+
+// Function to update the count and save it to local storage
+function updateCount() {
+    countElement.textContent = count;
+    localStorage.setItem("count", count);
+}
