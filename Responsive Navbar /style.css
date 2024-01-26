@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    background-color: aliceblue;
+    font-family: Arial, Helvetica, sans-serif;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+.logo img {
+    width: 100px;
+}
+
+.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 40px;
+    background-color: #1f2937;
+    height: 6rem;
+    position: relative;
+}
+
+.nav-list {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    list-style-type: none;
+}
+
+.nav-link:link,
+.nav-link:visited {
+    color: rgb(203, 213, 224);
+    font-size: 1.2rem;
+    font-weight: 400;
+    text-decoration: none;
+}
+.nav-link:hover,
+.nav-link:active {
+    color: crimson;
+}
+
+.nav-link.login:link,
+.nav-link.login:visited {
+    background-color: rgb(203, 213, 224);
+    color: black;
+    padding: 10px 30px;
+    border-radius: 15px;
+    transition: background-color 0.3s;
+}
+
+.nav-link.login:hover,
+.nav-link.login:active {
+    background-color: rgb(139, 156, 174);
+}
+
+.menu-btn ion-icon[name="close-outline"] {
+    display: none;
+}
+
+.menu-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: none;
+}
+
+.menu-btn ion-icon {
+    color: rgb(203, 213, 224);
+    height: 2.5rem;
+    width: 2.5rem;
+}
+
+@media (max-width: 640px) {
+    .menu-btn {
+        display: block;
+    }
+
+    .main-nav {
+        /* display: none; */
+        width: 100%;
+        height: 100vh;
+        background-color: #1f2937;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        /* display: none; */
+        opacity: 0;
+        pointer-events: none;
+        visibility: hidden;
+        transform: translateX(100%);
+        transition: all 0.3s ease-in;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        gap: 4rem;
+    }
+
+    .open-nav .main-nav {
+        opacity: 1;
+        pointer-events: auto;
+        visibility: visible;
+        transform: translateX(0%);
+    }
+
+    .open-nav .menu-btn ion-icon[name="close-outline"] {
+        display: block;
+    }
+    .open-nav .menu-btn ion-icon[name="menu-outline"] {
+        display: none;
+    }
+}
