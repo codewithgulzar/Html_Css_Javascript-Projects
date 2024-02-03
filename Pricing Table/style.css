@@ -1,0 +1,193 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap");
+
+body {
+    font-family: "DM Sans", sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+
+.container {
+    max-width: 1300px;
+    margin: 50px auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+.pricing-container {
+    display: flex;
+    gap: 25px;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+h1 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #2f1c6a;
+}
+
+.pricing-plan {
+    background-color: #fff;
+    width: 290px;
+    padding: 20px 30px;
+    border-radius: 10px;
+    border: 1px solid rgba(44, 44, 221, 0.2);
+    transition: transform 0.5s;
+    position: relative;
+}
+
+.pricing-plan:hover {
+    transform: scale(1.02) translateY(-5px);
+}
+
+.plan {
+    min-height: 80px;
+}
+
+.plan-name {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    color: #2f1c6a;
+    margin-bottom: 0;
+}
+
+.plan-description {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 100;
+    color: #2f1c6a;
+    margin-top: 10px;
+}
+
+.price {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.original-price {
+    text-decoration: line-through;
+    opacity: 0.7;
+}
+
+.discount {
+    background-color: #ebe4ff;
+    padding: 8px 15px;
+    border-radius: 30px;
+    font-weight: bold;
+    color: #4f25d1;
+}
+
+.monthly {
+    font-size: 1.3rem;
+    color: #2f1c6a;
+    font-weight: 100;
+}
+
+.monthly span {
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.savings {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #673de6;
+}
+
+.add-to-cart {
+    background-color: #673de5;
+    padding: 15px;
+    border: none;
+    outline: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    width: 90%;
+    transition: background-color 0.3s;
+}
+
+.add-to-cart:hover {
+    background-color: #5025d1;
+}
+
+/* features section */
+
+.features h3 {
+    color: #2f1c6a;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+.features div {
+    margin-bottom: 10px;
+}
+
+.features div i {
+    margin-right: 5px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #ffd000;
+}
+
+.features div span {
+    font-size: 14px;
+    font-weight: 700;
+    color: #2f1c6a;
+}
+
+.features div .close {
+    color: #ff3a85;
+}
+.features div .green {
+    color: #00b48e;
+}
+
+.most-popular .most-popular-text {
+    background-color: #ffe8ef;
+    padding: 10px;
+    color: #fc5185;
+    text-transform: uppercase;
+    display: inline-block;
+    width: 250px;
+    border-radius: 2rem;
+    text-align: center;
+    font-weight: 700;
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.most-popular {
+    background-color: #fafbff;
+    border: 1.8px solid #5025d1;
+}
+
+.most-popular .add-to-cart {
+    background-color: #fc5184;
+    transition: background-color 0.3s;
+}
+
+.most-popular .add-to-cart:hover {
+    background-color: #d63063;
+}
+
+.most-popular .savings {
+    color: #fc5184;
+}
+
+.most-popular .discount {
+    background-color: #ffe8ef;
+    color: #fc5184;
+}
