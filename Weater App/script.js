@@ -1,5 +1,4 @@
-// const apiKey = `paste you api key here (Go to openweathermap.org website  then create your account and find your api key, direct link- https://home.openweathermap.org/api_keys)`;
-
+const apiKey = '8d6454a89dff871786a0307b0dbebbee'
 async function fetchWeatherData(city) {
     try {
         const response = await fetch(
